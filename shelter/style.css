@@ -21,7 +21,7 @@ letter-spacing: 0.06em;
 
 color: #292929;
 }
-.btn:hover {
+.btn:hover, .card-btn:hover {
     background: #FDDCC4;
     cursor: pointer;
 }
@@ -194,4 +194,110 @@ h3 {
 .about-header {
     color: #545454;
     width: 390px;
+}
+
+.pets {
+    height: 877px;
+    width: 100%;
+    background: #F6F6F6;
+}
+.pets-container {
+    margin: 80px 40px 100px 40px;
+ /* background: red;    */
+    width: 1200px;
+    height: 697px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between
+
+}
+.pets-head {
+    width: 400px;
+    text-align: center;
+    color: #545454;
+}
+.pets-slider {
+width: 1200px;
+height: 435px;
+position: relative;
+}
+.pets-slider-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.cards {
+    margin: 0 45px;
+    width: 270px;
+    height: 435px;
+}
+.cards:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cards-container {
+    border-radius: 9px 9px 0px 0px;
+    background: #FAFAFA;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.card-img {
+    width: 270px;
+    height: 270px;
+    content: '';
+}
+.card-img-jennifer{
+    background-image: url(./assets/img/slider/jennifer.png);
+}
+.card-img-katrine{
+    background-image: url(./assets/img/slider/katrine.png);
+}
+.card-img-woody{
+    background-image: url(./assets/img/slider/woody.png);
+}
+
+.card-name {
+    margin: 30px 0;
+}
+.slider-btn{
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    background:inherit;
+}
+.card-btn {
+    width: 187px;
+height: 52px;
+}
+.nav-btn{
+    width: 52px;
+    height: 52px;
+    font-size:14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 189px;
+}
+.nav-btn-left{
+    transform: rotate(-180deg);
+    
+
+}
+.nav-btn-right{
+    right: 0px;
+
+}
+.pets-btn {
+    width: 261px;
+height: 52px;
 }

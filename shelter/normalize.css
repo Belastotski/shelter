@@ -17,6 +17,8 @@
   }
   a:visited {
     color: inherit;
+    text-decoration: none;
+
     }
   /* Sections
      ========================================================================== */
@@ -355,4 +357,8 @@
   
   [hidden] {
     display: none;
+  }
+
+  button {
+    border: none;
   }

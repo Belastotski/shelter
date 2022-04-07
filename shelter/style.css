@@ -134,19 +134,15 @@ h2 {
 }
 .main-text {
     margin: 42px 0;
-    font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 160%;
-/* or 24px */
-
-display: flex;
-align-items: center;
-
-/* color-dark-s */
-
 color: #CDCDCD;
+}
+
+.subheading{
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
 }
 .main-img {
     margin-left: 42px;
@@ -155,4 +151,47 @@ height: 728px;
     background-image: url('./assets/img/puppy.png');
     content: '';
     
+}
+
+.about {
+    height: 588px;
+}
+.about-container {
+    width: 1200px;
+    height: 408px;
+    margin: 80px 40px 100px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.about-img {
+    margin-left: 175px;
+width: 300px;
+height: 408px;
+content: '';
+background: url(./assets/img/pets.png);
+}
+.about-content {
+    margin: 14px 175px 14px 120px;
+    width: 430px;
+height: 380px;
+color: #4C4C4C;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+}
+
+h3 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;  
+}
+
+.about-header {
+    color: #545454;
+    width: 390px;
 }

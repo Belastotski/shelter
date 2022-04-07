@@ -301,3 +301,92 @@ height: 52px;
     width: 261px;
 height: 52px;
 }
+
+.help {
+ width: 1280px;
+ height: 680px;   
+}
+.help-container {
+    width: 1200px;
+height: 431px;
+margin: 80px 40px 100px 40px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+}
+.help-title {
+    width: 310px;
+    text-align: center;
+}
+
+.help-icons {
+    width: 1035px;
+height: 281px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.help-card {
+    flex: 0 0 20%;
+    height:113px;
+    min-width: 60px;
+    margin: 0 0 55px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.help-card-icon {
+    width: 100%;
+    height: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.help-icon-petfood {
+    background-image: url(./assets/icon/petfood.png);
+}
+.help-card-text {
+    font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 115%;
+/* identical to box height, or 23px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.06em;
+
+/* color-dark-l */
+
+color: #545454;
+}
+.help-icon-transportation {
+    background-image: url(./assets/icon/transportation.png);
+}
+.help-icon-toys {
+    background-image: url(./assets/icon/toys.png);
+}
+.help-icon-bowl {
+    background-image: url(./assets/icon/bowls.png);
+}
+.help-icon-shampoos {
+    background-image: url(./assets/icon/shampoos.png);
+}
+.help-icon-vitamins {
+    background-image: url(./assets/icon/vitamins.png);
+}
+.help-icon-medicines {
+    background-image: url(./assets/icon/medicines.png);
+}
+.help-icon-collars {
+    background-image: url(./assets/icon/collars.png);
+}
+.help-icon-sleeping {
+    background-image: url(./assets/icon/sleeping.png);
+}

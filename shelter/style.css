@@ -159,7 +159,6 @@ height: 728px;
 .about-container {
     width: 1200px;
     height: 408px;
-    margin: 80px 40px 100px 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -202,7 +201,6 @@ h3 {
     background: #F6F6F6;
 }
 .pets-container {
-    margin: 80px 40px 100px 40px;
  /* background: red;    */
     width: 1200px;
     height: 697px;
@@ -304,12 +302,11 @@ height: 52px;
 
 .help {
  width: 1280px;
- height: 680px;   
+ height: 611px;   
 }
 .help-container {
     width: 1200px;
 height: 431px;
-margin: 80px 40px 100px 40px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -389,4 +386,110 @@ color: #545454;
 }
 .help-icon-sleeping {
     background-image: url(./assets/icon/sleeping.png);
+}
+.donate {
+    height: 462px;
+width: 100%;
+background: #F6F6F6;
+}
+.donate-container {
+    width: 915px;
+    height: 282px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.donate-img {
+    width: 55%;
+    content: '';
+    background-image: url('./assets/img/donation-dog.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.donate-content {
+    width: 41%;
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.donate-title {
+    color: #545454;
+    width: 300px;
+}
+
+.donate-subheading {
+    color: #545454; 
+}
+
+.card {
+
+    width: 349px;
+    height: 43px; 
+    background: #F1CDB3;
+    border-radius: 9px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-image: url('./assets/icon/credit-card.png');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+}
+.card-num {
+    margin-left: 60px;
+}
+
+.donate-info {
+    font-family: 'Arial';
+font-style: italic;
+font-weight: 400;
+font-size: 12px;
+line-height: 18px;
+/* or 150% */
+
+display: flex;
+align-items: center;
+
+/* color-dark-m */
+
+color: #B2B2B2;
+}
+
+h5 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+    
+    letter-spacing: 0.06em;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content:center;  
+}
+
+h4 {
+    font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 115%;
+/* identical to box height, or 23px */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.06em;
+}
+
+.mb20 {
+    margin-bottom: 20px;
 }

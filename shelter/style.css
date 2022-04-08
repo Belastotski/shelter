@@ -493,3 +493,89 @@ letter-spacing: 0.06em;
 .mb20 {
     margin-bottom: 20px;
 }
+
+.footer {
+    height: 350px;
+    width: 100%;
+    background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:flex-end;
+}
+.footer-container {
+    height: 310px;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.info {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-between;
+}
+.contact {
+    width: 280px;
+}
+.contact-heading {
+
+}
+.c-title {
+    color: #FFFFFF;
+}
+.c-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction:column;
+}
+.contact-email {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    background-image: url('./assets/icon/mail.png');
+}
+.conact-fiel {
+    padding-left: 60px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 150%;
+/* identical to box height, or 23px */
+
+letter-spacing: 0.06em;
+
+/* color-primary */
+
+color: #F1CDB3;
+}
+.contact-phone {
+    background-image: url('./assets/icon/phone.png');
+}
+.location {
+    width: 305px;
+}
+.contact-location {
+    
+}
+.contact-city {
+    background-image: url('./assets/icon/pin.png');
+    padding-left: 40px;
+    margin-bottom: 28px;
+    margin-top: 25px;
+}
+.contact-address {
+    background-image: url('./assets/icon/pin.png');
+    padding-left: 40px;
+    line-height: 180%;
+}
+.help-img {
+    width: 300px;
+height: 310px;
+background-image: url('assets/img/footer-puppy.png');
+content: '';
+}

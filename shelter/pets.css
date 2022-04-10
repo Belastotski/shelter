@@ -17,6 +17,7 @@
 }
 .header-pets .logo .header-title{
     color: #545454;
+    margin-top: 10px;
 }
 
 .header-pets .menu-items, .menu-item-activ {
@@ -36,15 +37,18 @@
 }
 .our-pets-content {
     width: 100%;
-    height: 1162px;
+    height: 1163px;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     align-items:center;
+    margin-top: -15px
+
 }
 .our-pets-title {
     width: 400px;
     text-align: center;
+
 }
 
 

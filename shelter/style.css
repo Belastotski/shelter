@@ -43,7 +43,7 @@ a:hover {
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),#211F20;
 }
 .header {
-    margin: 60px 40px 0 40px;
+    margin: 45px 40px 0 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -55,6 +55,7 @@ a:hover {
     flex-direction: column;
 align-items: center;
 margin-bottom:10px;
+margin-top: 10px;
 }
 .logo:hover {
     cursor: pointer;
@@ -81,7 +82,7 @@ font-family: 'Arial';
 font-style: normal;
 font-weight: 400;
 font-size: 13px;
-line-height: 15px;
+line-height: 35px;
 display: flex;
 align-items: center;
 letter-spacing: 0.1em;
@@ -100,7 +101,7 @@ letter-spacing: 0.1em;
 
 }
 .menu-item {
-margin: 0 0 0 35px;
+margin: 0 0 0 36px;
 
 }
 .menu-item-activ {
@@ -108,7 +109,7 @@ margin: 0 0 0 35px;
     border-bottom: 3px solid #F1CDB3;
 }
 .main-container {
-    margin: 60px 40px 0 40px;
+    margin: 44px 40px 0 40px;
 }
 .main{
     display: flex;
@@ -119,7 +120,7 @@ margin: 0 0 0 35px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 143px;
+    margin-top: 160px;
 
 }
 
@@ -172,13 +173,14 @@ height: 728px;
 }
 .about-img {
     margin-left: 175px;
+    margin-top: 10px;
 width: 300px;
 height: 408px;
 content: '';
 background: url(./assets/img/pets.png);
 }
 .about-content {
-    margin: 14px 175px 14px 120px;
+    margin: 22px 175px 0 120px;
     width: 430px;
 height: 380px;
 color: #4C4C4C;
@@ -199,6 +201,11 @@ h3 {
 .about-header {
     color: #545454;
     width: 390px;
+
+}
+.about-center{
+
+    margin-top: 20px;
 }
 
 .pets {
@@ -213,7 +220,8 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:space-between
+    justify-content:space-between;
+    margin-top: -10px;
 
 }
 .pets-head {
@@ -271,7 +279,12 @@ position: relative;
 }
 
 .card-name {
-    margin: 30px 0;
+    margin: 27px 0;
+    font-family: 'Georgia';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
 }
 .slider-btn{
     border: 2px solid #F1CDB3;
@@ -324,7 +337,7 @@ justify-content: space-between;
 }
 
 .help-icons {
-    width: 1035px;
+    width: 1200px;
 height: 281px;
 display: flex;
 flex-direction: row;
@@ -336,11 +349,12 @@ flex-wrap: wrap;
     flex: 0 0 20%;
     height:113px;
     min-width: 60px;
-    margin: 0 0 55px 0px;
+    margin: 0 0 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 .help-card-icon {
@@ -407,6 +421,7 @@ background: #F6F6F6;
     align-items: center;
 }
 .donate-img {
+    margin-top: 10px;;
     width: 55%;
     content: '';
     background-image: url('./assets/img/donation-dog.png');
@@ -415,6 +430,7 @@ background: #F6F6F6;
     height: 100%;
 }
 .donate-content {
+    margin-top: 20px;
     width: 41%;
     height: 282px;
     display: flex;
@@ -440,11 +456,11 @@ background: #F6F6F6;
     justify-content:center;
     align-items: center;
     background-image: url('./assets/icon/credit-card.png');
-    background-position: 5% 50%;
+    background-position: 3% 50%;
     background-repeat: no-repeat;
 }
 .card-num {
-    margin-left: 60px;
+    margin-left: 40px;
 }
 
 .donate-info {

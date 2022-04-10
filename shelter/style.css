@@ -497,7 +497,7 @@ letter-spacing: 0.06em;
 }
 
 .mb20 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .footer {
@@ -525,9 +525,6 @@ letter-spacing: 0.06em;
 }
 .contact {
     width: 280px;
-}
-.contact-heading {
-
 }
 .c-title {
     color: #FFFFFF;
@@ -565,9 +562,7 @@ color: #F1CDB3;
 .location {
     width: 305px;
 }
-.contact-location {
-    
-}
+
 .contact-city {
     background-image: url('./assets/icon/pin.png');
     padding-left: 40px;
@@ -584,4 +579,21 @@ color: #F1CDB3;
 height: 310px;
 background-image: url('assets/img/footer-puppy.png');
 content: '';
+}
+
+
+.card-img-timmy {
+    background-image: url(./assets/img/slider/timmy.png);
+}
+.card-img-charly {
+    background-image: url(./assets/img/slider/charly.png);
+}
+.card-img-scarlett {
+    background-image: url(./assets/img/slider/scarlett.png)
+}
+.card-img-freddie {
+    background-image: url(./assets/img/slider/freddie.png);
+}
+.card-img-sophia {
+    background-image: url(./assets/img/slider/sophia.png)
 }

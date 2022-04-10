@@ -1,0 +1,84 @@
+.head-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1280px;
+    height: 120px;
+}
+.header-pets{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    /* height: 100%; */
+    color: #545454 !important;
+}
+.header-pets .logo .header-title{
+    color: #545454;
+}
+
+.header-pets .menu-items, .menu-item-activ {
+    color: #545454;
+}
+
+.our-pets {
+    width: 1280px;
+    height: 1342px;
+    color: #545454;
+    background: #F6F6F6;
+
+}
+.our-pets-container {
+    width: 1200px;
+    /* height: 100%; */
+}
+.our-pets-content {
+    width: 100%;
+    height: 1162px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+}
+.our-pets-title {
+    width: 400px;
+    text-align: center;
+}
+
+
+.our-pets-cards {
+    width: 100%;
+    height: 930px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 20%
+}
+.our-pets-cards .cards{
+    margin: 15px auto;
+}
+
+/* .our-pets-cards .cards-container {
+margin-bottom: 30px;
+} */
+
+
+.our-pets-btn {
+    height: 52px;
+width: 52px;
+margin: 0 10px;
+}
+.disable-btn{
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+}
+.disable-btn:hover {
+    background:inherit;
+    cursor:default;
+}
+
+.active-btn {
+    background: #F1CDB3;
+}

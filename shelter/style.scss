@@ -32,31 +32,81 @@ a:hover {
 .cards:hover .card-btn{
     background: #FDDCC4;
 }
-.wrapper {
-    width: 1280px;
-    margin: auto;
-}
+
 .head_background {
     display:flex;
     flex-direction: column;
-    height: 908px;
+    height: 100%;
     width: 100%;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),#211F20;
 }
+$width-max: 1280px;
+$width-mid: 768px;
+$width-min: 320px;
 
-$def-width: 1200px;
+@mixin def-width-container {
+    width: 1200px;
+    @media (max-width: ($width-max - 1)) {
+        width: $width-mid; 
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: $width-min; 
+    }  
+}
 
-@media (min-width: 768px) {
-    
+@mixin def-width {
+    width: $width-max;
+    @media (max-width: ($width-max - 1)) {
+        width: $width-mid; 
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: $width-min; 
+    }  
+}
+
+.wrapper {
+    @include def-width;
+    margin: auto;
 }
 
 .header {
     margin: 45px 40px 0 40px;
+    @media (min-width: 768px) {
+        margin: 30px 30px 0 30px;
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
+    .header-title {
+        /* logo_title */
+        
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        /* or 35px */
+        
+        
+        letter-spacing: 0.06em;
+        
+        /* color-primary */
+        
+        color: #F1CDB3;
+        }
+        .header-subtitle {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 35px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.1em;
+        
+        }
 }
 .logo {
     display: flex;
@@ -64,38 +114,12 @@ $def-width: 1200px;
 align-items: center;
 margin-bottom:10px;
 margin-top: 10px;
-}
 .logo:hover {
     cursor: pointer;
 }
-.header-title {
-/* logo_title */
-
-font-family: 'Georgia';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 110%;
-/* or 35px */
-
-
-letter-spacing: 0.06em;
-
-/* color-primary */
-
-color: #F1CDB3;
 }
-.header-subtitle {
-font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-line-height: 35px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
 
-}
+
 .menu-items {
     list-style: none;
     display: flex;
@@ -118,10 +142,20 @@ margin: 0 0 0 36px;
 }
 .main-container {
     margin: 44px 40px 0 40px;
+    @media (max-width: ($width-max - 1)) {
+        margin: 60px 100px 0 90px;
+        height: 1015px;
+        
+    }
 }
 .main{
     display: flex;
     flex-direction: row;
+    @media (max-width: ($width-max - 1)){
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+    }
 }
 .main-content {
     width: 460px;
@@ -129,7 +163,9 @@ margin: 0 0 0 36px;
     flex-direction: column;
     align-items: flex-start;
     margin-top: 160px;
-
+    @media (max-width: ($width-max - 1)){
+    margin-top: 0;
+    }
 }
 
 h2 {  
@@ -147,6 +183,14 @@ h2 {
     width: 310px;
     color: #FFFFFF;
 }
+
+.main-btn {
+    @media (max-width: ($width-max - 1)){
+        align-self: center;
+    }
+
+}
+
 .main-text {
     margin: 42px 0;
 color: #CDCDCD;
@@ -160,6 +204,14 @@ color: #CDCDCD;
     line-height: 160%;
 }
 .main-img {
+    @media (max-width: ($width-max - 1)){
+        margin: 99px 0 0 120px;
+        width: 569px;
+        height: 593px;
+        background-position: top top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
     margin-left: 42px;
     width: 698px;
 height: 728px;
@@ -170,16 +222,30 @@ height: 728px;
 
 .about {
     height: 588px;
+    @media (max-width: ($width-max - 1)) {
+        height: 1048px;
+    }
 }
 .about-container {
-    width:  $def-width;
+    @include def-width-container;
     height: 408px;
+    @media (max-width: ($width-max - 1)) {
+        height: 868px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start
+    }
     display: flex;
     flex-direction: row;
     justify-content: center;
 
+
 }
 .about-img {
+    @media (max-width: ($width-max - 1)) {
+    margin: 80px 0 0 0;
+    order: 1;
+    }
     margin-left: 175px;
     margin-top: 10px;
 width: 300px;
@@ -188,6 +254,10 @@ content: '';
 background: url(./assets/img/pets.png);
 }
 .about-content {
+    @media (max-width: ($width-max - 1)) {
+        margin: 0;
+        order: 0;
+        }
     margin: 22px 175px 0 120px;
     width: 430px;
 height: 380px;
@@ -223,14 +293,13 @@ h3 {
 }
 .pets-container {
  /* background: red;    */
-    width: $def-width;
+    @include def-width-container;
     height: 697px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-between;
     margin-top: -10px;
-
 }
 .pets-head {
     width: 400px;
@@ -238,19 +307,31 @@ h3 {
     color: #545454;
 }
 .pets-slider {
-width: $def-width;
-height: 435px;
-position: relative;
-}
+    @include def-width-container;
+    @media (max-width: ($width-max - 1)){
+     width: 706px;   
+    }
+    height: 435px;
+    position: relative;
+    }
 .pets-slider-container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    @media (max-width: ($width-max - 1)){
+        flex-wrap: wrap;
+        overflow:hidden;
+        // max-height:50px;
+        overflow-y:hidden;
+    }
 
 }
 .cards {
+    @media (max-width: ($width-max - 1)){
+        margin: 0 20px;   
+    }
     margin: 0 45px;
     width: 270px;
     height: 435px;
@@ -328,11 +409,19 @@ height: 52px;
 }
 
 .help {
- width: 1280px;
+ @include def-width;
+ @media (max-width: ($width-max - 1)) {
+    height: 779px;
+}
  height: 611px;   
 }
 .help-container {
-    width: $def-width;
+    max-width: 1200;
+    @media (max-width: ($width-max - 1)) {
+        width: 630px;
+        height: 599px;
+
+    }
 height: 431px;
 display: flex;
 flex-direction: column;
@@ -345,7 +434,10 @@ justify-content: space-between;
 }
 
 .help-icons {
-    width: $def-width;
+    @include def-width-container;
+    @media (max-width: ($width-max - 1)) {
+        height: 446px;
+    }
 height: 281px;
 display: flex;
 flex-direction: row;
@@ -354,6 +446,9 @@ flex-wrap: wrap;
 }
 
 .help-card {
+    @media (max-width: ($width-max - 1)) {
+        flex: 0 0 30%;
+    }
     flex: 0 0 20%;
     height:113px;
     min-width: 60px;
@@ -416,11 +511,19 @@ color: #545454;
     background-image: url(./assets/icon/sleeping.png);
 }
 .donate {
+    @media (max-width: ($width-max - 1)){
+        height: 783px;
+    }
     height: 462px;
 width: 100%;
 background: #F6F6F6;
 }
 .donate-container {
+    @media (max-width: ($width-max - 1)){
+        width: 100%;
+        height: 100%;
+        flex-direction:column;
+    }
     width: 915px;
     height: 282px;
     display: flex;
@@ -428,7 +531,14 @@ background: #F6F6F6;
     justify-content: space-between;
     align-items: center;
 }
+
 .donate-img {
+    @media (max-width: ($width-max - 1)) {
+        width: 505px;
+        height: 261px;
+        order: 1;
+        margin: 0 0 100px 0;
+    }
     margin-top: 10px;;
     width: 55%;
     content: '';
@@ -438,6 +548,9 @@ background: #F6F6F6;
     height: 100%;
 }
 .donate-content {
+    @media (max-width: ($width-max - 1)) {
+    margin-top: 80px;
+    }
     margin-top: 20px;
     width: 41%;
     height: 282px;
@@ -525,6 +638,9 @@ letter-spacing: 0.06em;
 }
 
 .footer {
+    @media (max-width: ($width-max - 1)) {
+        height: 639px;
+    }
     height: 350px;
     width: 100%;
     background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
@@ -534,8 +650,13 @@ letter-spacing: 0.06em;
     justify-content:flex-end;
 }
 .footer-container {
+    @media (max-width: ($width-max - 1)) {
+        height: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     height: 310px;
-    width: $def-width;
+    @include def-width-container;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -554,6 +675,9 @@ letter-spacing: 0.06em;
     color: #FFFFFF;
 }
 .c-container {
+    @media (max-width: ($width-max - 1)) {
+    margin: 30px 30px;
+    }
     margin-top: 16px;
     display: flex;
     flex-direction:column;
@@ -603,6 +727,9 @@ color: #F1CDB3;
 height: 310px;
 background-image: url('assets/img/footer-puppy.png');
 content: '';
+@media (max-width: ($width-max - 1)) {
+    margin-top: 30px;
+}
 }
 
 

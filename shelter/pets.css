@@ -53,8 +53,16 @@
   margin-top: 10px;
 }
 
+.header-pets .logo {
+  z-index: 200;
+}
+
 .header-pets .menu-items, .menu-item-activ {
   color: #545454;
+}
+
+.header-pets .menu-items {
+  z-index: 100;
 }
 
 .our-pets {

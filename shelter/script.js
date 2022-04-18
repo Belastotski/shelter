@@ -22,6 +22,7 @@ let menuShow = _ => {
     back.classList.remove('hide');
     isShow = true;
     }
+    addClose();
 }
 let menuHide = _ => {
     if (isShow){
@@ -35,6 +36,7 @@ let menuHide = _ => {
     }, 300)
     isShow = false;
     }
+    removeClose();
 }
 
 let addClose = _ => {
@@ -60,13 +62,9 @@ burger.addEventListener('click', e =>{
     isShow? menuHide():menuShow();
 })
 
-if (media.matches) {
-    addClose()
-}
 
 media.addEventListener('change',(e) => {
     if (isShow && !e.matches) menuHide(); 
-    e.matches? addClose() : removeClose();
     }); 
 
 

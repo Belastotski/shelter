@@ -104,7 +104,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .header {
-    margin: 30px 53px 0 10px;
+    margin: 30px 0 0 0;
   }
 }
 .header .header-title {
@@ -154,7 +154,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .logo {
-    margin: 0;
+    margin: 0 0 0 10px;
   }
 }
 
@@ -183,6 +183,7 @@ a:hover {
 @media (max-width: 767px) {
   .burger {
     display: inline-block;
+    margin-right: 53px;
     z-index: 200;
   }
 }
@@ -201,18 +202,18 @@ a:hover {
 }
 @-webkit-keyframes burger {
   0% {
-    right: -380px;
+    right: -320px;
   }
   100% {
-    right: -60;
+    right: 0px;
   }
 }
 @keyframes burger {
   0% {
-    right: -380px;
+    right: -320px;
   }
   100% {
-    right: -60;
+    right: 0px;
   }
 }
 
@@ -222,19 +223,19 @@ a:hover {
 }
 @-webkit-keyframes bur {
   0% {
-    right: -60px;
+    right: 0px;
   }
   100% {
-    right: -380px;
+    right: -320px;
     display: none;
   }
 }
 @keyframes bur {
   0% {
-    right: -60px;
+    right: 0px;
   }
   100% {
-    right: -380px;
+    right: -320px;
     display: none;
   }
 }
@@ -257,8 +258,8 @@ a:hover {
   .menu-burger {
     display: inline-block;
     position: absolute;
-    top: -30px;
-    right: -53px;
+    top: -50px;
+    right: 0px;
     height: 823px;
     background-color: #292929;
   }
@@ -325,7 +326,7 @@ a:hover {
 @media (max-width: 767px) {
   .main-container {
     height: 673px;
-    margin: 60px 10px 0 10px;
+    margin: 30px 10px 0 10px;
   }
 }
 
@@ -451,7 +452,7 @@ h2 {
   .main-img {
     width: 260px;
     height: 272px;
-    margin: 42px 0 0 60px;
+    margin: 105px 0 0 60px;
   }
 }
 
@@ -816,6 +817,9 @@ h3 {
   }
 }
 
+.nav-btn-right {
+  right: 0;
+}
 @media (max-width: 767px) {
   .nav-btn-right {
     right: 55px;

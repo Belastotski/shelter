@@ -94,7 +94,8 @@ $width-min: 320px;
         margin: 30px 30px 0 30px;
     }
     @media (max-width: ($width-mid - 1)) {
-        margin: 30px 53px 0 10px;
+        // margin: 30px 53px 0 10px;
+        margin: 30px 0 0 0;
     }
     display: flex;
     flex-direction: row;
@@ -141,7 +142,7 @@ margin-top: 10px;
     cursor: pointer;
 }
 @media (max-width: ($width-mid - 1)){
-    margin: 0;
+    margin: 0 0 0 10px;
 }
 }
 .display-block { 
@@ -165,6 +166,7 @@ margin-top: 10px;
     }
     @media (max-width: ($width-mid - 1)) {
         display: inline-block;
+        margin-right: 53px;
         z-index: 200;
     }
 }
@@ -178,15 +180,15 @@ margin-top: 10px;
 .show-burger-menu {
     animation: burger .3s;
     @keyframes burger {
-        0% { right: -380px;}
-        100% { right: -60; }
+        0% { right: -320px;}
+        100% { right: 0px; }
     }
 }
 .hide-burger-menu {
     animation: bur .3s;
     @keyframes bur {
-        0% { right: -60px;}
-        100% { right: -380px;
+        0% { right: 0px;}
+        100% { right: -320px;
                 display: none;}
     }
 }
@@ -205,8 +207,8 @@ margin-top: 10px;
     @media (max-width: ($width-mid - 1)) {
         display: inline-block;
         position: absolute;
-        top: -30px;
-        right: -53px;
+        top: -50px;
+        right: 0px;
         height: 823px;
         background-color: #292929;
         
@@ -253,7 +255,7 @@ margin: 0 0 0 36px;
     }
     @media (max-width: ($width-mid - 1)) {
         height: 673px;
-        margin: 60px 10px 0 10px;
+        margin: 30px 10px 0 10px;
     }
 }
 .main{
@@ -336,7 +338,7 @@ color: #CDCDCD;
     @media (max-width: ($width-mid - 1)) {
         width: 260px;
         height: 272px;
-        margin: 42px 0 0 60px;
+        margin: 105px 0 0 60px;
     }
     margin-left: 42px;
     width: 698px;
@@ -579,6 +581,7 @@ height: 52px;
 
 }
 .nav-btn-right{
+    right: 0;
     @media (max-width: ($width-mid - 1)){
     right: 55px;
     }

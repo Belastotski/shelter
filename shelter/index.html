@@ -12,6 +12,23 @@
     <title>Cozy House</title>
   </head>
   <body>
+    <div class="modal-container hide">
+    <div class="modal">
+      <div class="modal-close">&times</div>
+      <div class="modal-img"></div>
+      <div class="modal-content">
+        <h3 class="modal-title" id="name">123</h3>
+        <h4 class="modal-subtitle" id="pet-type">345</h4>
+        <h5 class="modal-body" id="pet-content">567</h5>
+        <ul class="modal-list">
+          <li class="modal-list-age"><span class="modal-list-title">Age:&nbsp;</span><span class="modal-list-content" id="age"></span></li>
+          <li class="modal-list-inoculations"><span class="modal-list-title">Inoculations:&nbsp;</span><span class="modal-list-content" id="inoculations"></span></li>
+          <li class="modal-list-diseases"><span class="modal-list-title">Diseases:&nbsp;</span><span class="modal-list-content" id="diseases"></span></li>
+          <li class="modal-list-parasites"><span class="modal-list-title">Parasites:&nbsp;</span><span class="modal-list-content" id="parasites"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
     <div class="gray hide"></div>
     <div class="wrapper">
       <div class="head_background">
@@ -194,5 +211,6 @@
     <script src="./js/script.js"></script>
     <script src="./js/pets.json"></script>
     <script src="./js/carousel.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

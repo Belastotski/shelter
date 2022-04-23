@@ -1,6 +1,5 @@
-const pets = JSON.parse(data);
-
-console.log(pets);
+{
+  const pets = JSON.parse(data);
 
 const slider = document.getElementById('slider');
 
@@ -8,10 +7,7 @@ const rightBtn = document.getElementById('slider-btn-right');
 
 const leftBtn = document.getElementById('slider-btn-left')
 
-
 let lastElements = [];
-
-let thisElements;
 
 const minWindow = window.matchMedia('(max-width: 767px)');
 
@@ -37,6 +33,9 @@ const createCard = id => {
 
     const card = document.createElement('div');
     card.classList.add('cards');
+    card.addEventListener('click', () => {
+      getModal(id);
+    })
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('cards-container');
     card.appendChild(cardContainer);
@@ -77,11 +76,9 @@ const getCards = (count, direction) => {
     slider.removeChild(element);
   });
   lastElements = [...thisElements]
-  console.log(lastElements);
 }
 
 getCards(getCount(),true);
-
 
 
 rightBtn.addEventListener('click', e => {
@@ -101,4 +98,4 @@ midWindow.addEventListener('change', e => {
   getCards(getCount(),true);
 })
 
-
+}

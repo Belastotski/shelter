@@ -5,6 +5,10 @@ body {
 
 }
 
+$width-max: 1280px;
+$width-mid: 768px;
+$width-min: 320px;
+
 .overflow {
     overflow: hidden;
 }
@@ -33,6 +37,10 @@ body {
     background: #FAFAFA;
     border-radius: 9px;
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    @media (max-width: ($width-max - 1)){
+        width: 630px;
+        height: 350px;
+    }
 }
 .modal-img {
     min-width: 500px;
@@ -41,6 +49,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 0px 0px 0px 9px;
+    @media (max-width: ($width-max - 1)){
+        min-width: 350px;
+    }
 }
 .modal-content {
     display: flex;
@@ -50,19 +61,37 @@ body {
     margin-top: 50px; 
     margin-left: 29px;
     margin-right: 20px;
+    @media (max-width: ($width-max - 1)){
+        margin-top: 10px; 
+        margin-left: 10px;
+        justify-content: space-between;
+        height: 330px;
+    }
 }
 
 .modal-subtitle {
     margin-top: 10px;
+    @media (max-width: ($width-max - 1)){
+        margin-top: -20px;
+    }
 }
 .modal-body {
     margin: 40px 0 35px 0;
+    @media (max-width: ($width-max - 1)){
+        margin: 0;
+        font-size: 13px;
+    }
+    
 }
 .modal-list { 
     padding: 0;
     color:#F1CDB3;
+    margin: 0 0 0 10px;
     & li {
-        margin: 5px;
+        margin-top: 5px;
+        @media (max-width: ($width-max - 1)){
+            margin: 0;
+        }
     } 
 }
 
@@ -126,9 +155,6 @@ a:hover {
 .cards:hover .card-btn{
     background: #FDDCC4;
 }
-$width-max: 1280px;
-$width-mid: 768px;
-$width-min: 320px;
 .head_background {
     display:flex;
     flex-direction: column;

@@ -41,6 +41,11 @@ $width-min: 320px;
         width: 630px;
         height: 350px;
     }
+    @media (max-width: ($width-mid - 1)) {
+        width: 270px;
+        height: 373px;
+
+    }
 }
 .modal-img {
     min-width: 500px;
@@ -51,6 +56,9 @@ $width-min: 320px;
     border-radius: 0px 0px 0px 9px;
     @media (max-width: ($width-max - 1)){
         min-width: 350px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        display: none;
     }
 }
 .modal-content {
@@ -64,8 +72,12 @@ $width-min: 320px;
     @media (max-width: ($width-max - 1)){
         margin-top: 10px; 
         margin-left: 10px;
+        margin-right: 10px;
         justify-content: space-between;
         height: 330px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 340px;
     }
 }
 
@@ -74,12 +86,19 @@ $width-min: 320px;
     @media (max-width: ($width-max - 1)){
         margin-top: -20px;
     }
+    @media (max-width: ($width-mid - 1)) {
+        align-self: center;
+    }
 }
 .modal-body {
     margin: 40px 0 35px 0;
     @media (max-width: ($width-max - 1)){
         margin: 0;
         font-size: 13px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        align-self: stretch;
+        text-align: justify;
     }
     
 }

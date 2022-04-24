@@ -1,4 +1,4 @@
-const pets = JSON.parse(data);
+// const pets = JSON.parse(data);
 
 const body = document.querySelector('body');
 const modalContainer = document.querySelector('.modal-container');

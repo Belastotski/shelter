@@ -1,3 +1,4 @@
+{
 let logo  = document.querySelector('.logo');
 
 logo.addEventListener('click', e => location.href = './index.html')
@@ -14,12 +15,16 @@ let back = document.querySelector('.gray');
 
 const media = window.matchMedia('(max-width: 767px)');
 
+const body = document.querySelector('body');
+
 let menuShow = _ => {
     if (!isShow) {
     burger.classList.add('active');
     menu.classList.add('show-burger-menu');
     menu.classList.remove('hide');
     back.classList.remove('hide');
+    body.classList.add('overflow');
+    menu.style.height = document.documentElement.clientHeight + 'px';
     isShow = true;
     }
     addClose();
@@ -30,6 +35,7 @@ let menuHide = _ => {
     menu.classList.remove('show-burger-menu');
     menu.classList.add('hide-burger-menu');
     back.classList.add('hide');
+    body.classList.remove('overflow');
     setTimeout(() =>{
     menu.classList.remove('hide-burger-menu');
     menu.classList.add('hide');
@@ -42,20 +48,16 @@ let menuHide = _ => {
 let addClose = _ => {
     window.addEventListener('click', e => {
         if (e.target.parentElement != menu && e.target != burger && isShow){
-            console.log('i work')
             menuHide()
         }
     });
-    console.log('addClose');
 }
 let removeClose = _ => {
     window.removeEventListener('click', e => {
         if (e.target.parentElement != menu && e.target != burger && isShow){
-            console.log('i work')
             menuHide()
         }
     });
-    console.log('removeClose')
 }
 
 burger.addEventListener('click', e =>{
@@ -67,4 +69,4 @@ media.addEventListener('change',(e) => {
     if (isShow && !e.matches) menuHide(); 
     }); 
 
-
+}

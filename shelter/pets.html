@@ -12,6 +12,23 @@
     <link rel="stylesheet" href="pets.css" />
   </head>
   <body>
+    <div class="modal-container hide">
+      <div class="modal">
+        <div class="modal-close">&times</div>
+        <div class="modal-img"></div>
+        <div class="modal-content">
+          <h3 class="modal-title" id="name">123</h3>
+          <h4 class="modal-subtitle" id="pet-type">345</h4>
+          <h5 class="modal-body" id="pet-content">567</h5>
+          <ul class="modal-list">
+            <li class="modal-list-age"><span class="modal-list-title">Age:&nbsp;</span><span class="modal-list-content" id="age"></span></li>
+            <li class="modal-list-inoculations"><span class="modal-list-title">Inoculations:&nbsp;</span><span class="modal-list-content" id="inoculations"></span></li>
+            <li class="modal-list-diseases"><span class="modal-list-title">Diseases:&nbsp;</span><span class="modal-list-content" id="diseases"></span></li>
+            <li class="modal-list-parasites"><span class="modal-list-title">Parasites:&nbsp;</span><span class="modal-list-content" id="parasites"></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
           <div class="gray gray-z0 hide"></div>
     <div class="wrapper">
       <div class="head-container">
@@ -53,72 +70,14 @@
                     Our friends who <br>
                     are looking for a house  
                 </h3>
-                   <div class="our-pets-cards">
-                    <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-katrine"></div>
-                          <p class="card-name">Katrine</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-jennifer"></div>
-                          <p class="card-name">Jennifer</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-woody"></div>
-                          <p class="card-name">Woody</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-sophia"></div>
-                          <p class="card-name">Sophia</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-timmy"></div>
-                          <p class="card-name">Timmy</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-charly"></div>
-                          <p class="card-name">Charly</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-scarlett"></div>
-                          <p class="card-name">Scarlett</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      <div class="cards">
-                        <div class="cards-container">
-                          <div class="card-img card-img-freddie"></div>
-                          <p class="card-name">Freddie</p>
-                          <button class="card-btn slider-btn btn">Learn more</button>
-                        </div>
-                      </div>
-                      
-
+                   <div class="our-pets-cards" id="pagin">
                    </div>
-                   <div class="our-pets-menu">
-                       <button class="btn our-pets-btn slider-btn disable-btn">&lt;&lt;</button>
-                       <button class="btn our-pets-btn slider-btn disable-btn">&lt;</button>
-                       <button class="btn our-pets-btn slider-btn active-btn">1</button>
-                       <button class="btn our-pets-btn slider-btn">&gt;</button>
-                       <button class="btn our-pets-btn slider-btn">&gt;&gt;</button>
+                   <div class="our-pets-menu" id="pagin-menu">
+                       <button id="first-bnt" class="btn our-pets-btn slider-btn disable-btn">&lt;&lt;</button>
+                       <button id="prev-btn" class="btn our-pets-btn slider-btn disable-btn">&lt;</button>
+                       <button id="activ-btn" class="btn our-pets-btn slider-btn active-btn">1</button>
+                       <button id="next-btn" class="btn our-pets-btn slider-btn">&gt;</button>
+                       <button id="last-btn" class="btn our-pets-btn slider-btn">&gt;&gt;</button>
                    </div>
               </div>
           </div>
@@ -153,5 +112,8 @@
       </footer>
     </div>
     <script src="./js/script.js"></script>
+    <script src="./js/pets.json"></script>
+    <script src="./js/pagin.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

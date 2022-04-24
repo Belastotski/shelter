@@ -1,5 +1,4 @@
-{
-  const pets = JSON.parse(data);
+const pets = JSON.parse(data);
 
 const slider = document.getElementById('slider');
 
@@ -21,16 +20,6 @@ const createCard = id => {
   id = id < 0 ? pets.length*(Math.ceil((-id)/pets.length)) + id 
     : id < pets.length ? id 
     : id - pets.length*(Math.floor(id/pets.length));
-    const {name,
-        img,
-        type,
-        breed,
-        description,
-        age,
-        inoculations,
-        diseases,
-        parasites} = pets[id];
-
     const card = document.createElement('div');
     card.classList.add('cards');
     card.addEventListener('click', () => {
@@ -42,10 +31,10 @@ const createCard = id => {
     const cardImg = document.createElement('div');
     cardImg.classList.add('card-img');
     cardContainer.appendChild(cardImg);
-    cardImg.style.backgroundImage = `URL(${img})`;
+    cardImg.style.backgroundImage = `URL(${pets[id].img})`;
     const cardName = document.createElement('p');
     cardName.classList.add('card-name');
-    cardName.innerHTML = name;
+    cardName.innerHTML = pets[id].name;
     cardContainer.appendChild(cardName);
     const btn = document.createElement('button');
     btn.classList.add('card-btn', 'slider-btn', 'btn');
@@ -98,4 +87,3 @@ midWindow.addEventListener('change', e => {
   getCards(getCount(),true);
 })
 
-}

@@ -1,16 +1,24 @@
 
   const petArray = JSON.parse(data);
 
-  const pets = Array.from({ length: 6 }, (e) =>
-    petArray.sort((e) => Math.random() - 0.5)
-  ).flat();
+  Array.prototype.shufle = function(){
+    for (let i = 0; i < petArray.length; i++) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [this[j], this[i]] = [this[i], this[j]];
+    }
+    return [...this];
+  }
 
+  const pets = Array.from({ length: 6 }, (e) =>
+    petArray.shufle()).flat();
+  
   const pagin = document.getElementById("pagin");
   const first = document.getElementById("first-btn");
   const prev = document.getElementById("prev-btn");
   const activ = document.getElementById("activ-btn");
   const next = document.getElementById("next-btn");
   const last = document.getElementById("last-btn");
+  const menu = document.getElementById("pagin-menu")
 
   const minWindow = window.matchMedia("(max-width: 767px)");
   const midWindow = window.matchMedia("(max-width: 1279px)");
@@ -55,13 +63,82 @@
   midWindow.addEventListener('change', e => {
     getCards(getCount(),true);
   })
+
+  const clear = () => {
+    pagin.innerHTML = '';
+}
+
   const getCards = (count,page) => {
+      clear();
+      validate();
     for (let i = 0; i < count; i++){
         pagin.insertBefore(createCard(i + page*count),pagin.firstChild)
     }
   }
 
-  getCards(getCount(),page);
-  console.log(pets)
 
+  HTMLElement.prototype.disable = function(){
+    this.classList.add('disable-btn');
+  }
+  HTMLElement.prototype.active = function(){
+      this.classList.remove('disable-btn');
+  }
+  
+const menuFunctions = new Map();
+
+menuFunctions.set(first, e => {
+      if (page) {
+      page = 0;
+      getCards(getCount(),page);
+      }  
+  })
+
+menuFunctions.set(prev, e => {
+    if (page) {
+        page--;
+        getCards(getCount(),page);
+    } 
+});
+menuFunctions.set(last, e => {
+    let lastPage = Math.ceil(pets.length / getCount()) - 1; 
+    if (page < lastPage ) {
+        page = lastPage;
+        getCards(getCount(),page);
+    } 
+});
+
+menuFunctions.set(next, e => {
+    let lastPage = Math.ceil(pets.length / getCount()) - 1; 
+    if (page < lastPage ) {
+        page++;
+        getCards(getCount(),page);
+    } 
+});
+
+  const validate = () => {
+      first.active();
+      prev.active();
+      next.active();
+      last.active();
+
+    if (page == 0) {
+        first.disable();
+        prev.disable();
+    }
+    if (page == Math.ceil(pets.length / getCount()) -1) {
+        last.disable();
+        next.disable();
+    }
+    activ.innerText = page + 1;
+  }
+
+
+
+menu.addEventListener('click', e => {
+    if (menuFunctions.has(e.target)) {
+        menuFunctions.get(e.target)();
+    }
+});
+
+getCards(getCount(),page);
 

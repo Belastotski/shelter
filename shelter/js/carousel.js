@@ -1,4 +1,8 @@
-const pets = JSON.parse(data);
+let pets = JSON.parse(data);
+
+pets = [...pets.sort(e => Math.random() - 0.5)];
+
+console.log(pets);
 
 const slider = document.getElementById('slider');
 
@@ -61,6 +65,7 @@ const getCards = (count, direction) => {
       slider.appendChild(thisElements[0]);
     }
   }
+
   lastElements?.forEach(element => { 
     slider.removeChild(element);
   });

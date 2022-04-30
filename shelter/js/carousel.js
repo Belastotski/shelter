@@ -2,7 +2,6 @@ let pets = JSON.parse(data);
 
 pets = [...pets.sort(e => Math.random() - 0.5)];
 
-console.log(pets);
 
 const slider = document.getElementById('slider');
 

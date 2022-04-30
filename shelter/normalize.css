@@ -13,6 +13,7 @@
     -webkit-text-size-adjust: 100%; /* 2 */
   }
   a{
+    color: inherit;
     text-decoration: none;
   }
   a:visited {

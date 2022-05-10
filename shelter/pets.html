@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Pets</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="pets.css" />
@@ -21,15 +23,27 @@
           <h4 class="modal-subtitle" id="pet-type">345</h4>
           <h5 class="modal-body" id="pet-content">567</h5>
           <ul class="modal-list">
-            <li class="modal-list-age"><span class="modal-list-title">Age:&nbsp;</span><span class="modal-list-content" id="age"></span></li>
-            <li class="modal-list-inoculations"><span class="modal-list-title">Inoculations:&nbsp;</span><span class="modal-list-content" id="inoculations"></span></li>
-            <li class="modal-list-diseases"><span class="modal-list-title">Diseases:&nbsp;</span><span class="modal-list-content" id="diseases"></span></li>
-            <li class="modal-list-parasites"><span class="modal-list-title">Parasites:&nbsp;</span><span class="modal-list-content" id="parasites"></span></li>
+            <li class="modal-list-age">
+              <span class="modal-list-title">Age:&nbsp;</span
+              ><span class="modal-list-content" id="age"></span>
+            </li>
+            <li class="modal-list-inoculations">
+              <span class="modal-list-title">Inoculations:&nbsp;</span
+              ><span class="modal-list-content" id="inoculations"></span>
+            </li>
+            <li class="modal-list-diseases">
+              <span class="modal-list-title">Diseases:&nbsp;</span
+              ><span class="modal-list-content" id="diseases"></span>
+            </li>
+            <li class="modal-list-parasites">
+              <span class="modal-list-title">Parasites:&nbsp;</span
+              ><span class="modal-list-content" id="parasites"></span>
+            </li>
           </ul>
         </div>
       </div>
     </div>
-          <div class="gray gray-z0 hide"></div>
+    <div class="gray gray-z0 hide"></div>
     <div class="wrapper">
       <div class="head-container">
         <header class="header-pets">
@@ -37,15 +51,18 @@
             <h1 class="header-title">Cozy House</h1>
             <div class="header-subtitle">Shelter for pets in Boston</div>
           </div>
-          <div class="burger burger-gray">
-          </div>
+          <div class="burger burger-gray"></div>
           <div class="menu-burger hide">
             <ul class="menu-items">
-              <li class="menu-item ">
+              <li class="menu-item">
                 <a href="./index.html">About the shelter</a>
               </li>
-              <li class="menu-item menu-item-activ"><a href="#">Our pets</a></li>
-              <li class="menu-item"><a href="./index.html#help">Help the shelter</a></li>
+              <li class="menu-item menu-item-activ">
+                <a href="#">Our pets</a>
+              </li>
+              <li class="menu-item">
+                <a href="./index.html#help">Help the shelter</a>
+              </li>
               <li class="menu-item"><a href="#footer">Contacts</a></li>
             </ul>
           </div>
@@ -57,30 +74,44 @@
               <li class="menu-item menu-item-activ">
                 <a href="#">Our pets</a>
               </li>
-              <li class="menu-item"><a href="./index.html#help">Help the shelter</a></li>
+              <li class="menu-item">
+                <a href="./index.html#help">Help the shelter</a>
+              </li>
               <li class="menu-item"><a href="#footer">Contacts</a></li>
             </ul>
           </div>
         </header>
       </div>
       <div class="our-pets container">
-          <div class="our-pets-container">
-              <div class="our-pets-content">
-                  <h3 class="our-pets-title heading">
-                    Our friends who <br>
-                    are looking for a house  
-                </h3>
-                   <div class="our-pets-cards" id="pagin">
-                   </div>
-                   <div class="our-pets-menu" id="pagin-menu">
-                       <button id="first-btn" class="btn our-pets-btn slider-btn">&lt;&lt;</button>
-                       <button id="prev-btn" class="btn our-pets-btn slider-btn">&lt;</button>
-                       <button id="activ-btn" class="btn our-pets-btn slider-btn active-btn">1</button>
-                       <button id="next-btn" class="btn our-pets-btn slider-btn">&gt;</button>
-                       <button id="last-btn" class="btn our-pets-btn slider-btn">&gt;&gt;</button>
-                   </div>
-              </div>
+        <div class="our-pets-container">
+          <div class="our-pets-content">
+            <h3 class="our-pets-title heading">
+              Our friends who <br />
+              are looking for a house
+            </h3>
+            <div class="our-pets-cards" id="pagin"></div>
+            <div class="our-pets-menu" id="pagin-menu">
+              <button id="first-btn" class="btn our-pets-btn slider-btn">
+                &lt;&lt;
+              </button>
+              <button id="prev-btn" class="btn our-pets-btn slider-btn">
+                &lt;
+              </button>
+              <button
+                id="activ-btn"
+                class="btn our-pets-btn slider-btn active-btn"
+              >
+                1
+              </button>
+              <button id="next-btn" class="btn our-pets-btn slider-btn">
+                &gt;
+              </button>
+              <button id="last-btn" class="btn our-pets-btn slider-btn">
+                &gt;&gt;
+              </button>
+            </div>
           </div>
+        </div>
       </div>
       <footer class="footer" id="footer">
         <div class="footer-container">
@@ -89,23 +120,32 @@
               For questions and suggestions
             </h3>
             <h4 class="contact-email conact-fiel">
-                <a href="mailto:email@shelter.com">email@shelter.com</a></h4>
+              <a href="mailto:email@shelter.com">email@shelter.com</a>
+            </h4>
             <h4 class="contact-phone conact-fiel">
-                <a href="tel:+13 674 567 75 54">+13 674 567 75 54</a></h4>
+              <a href="tel:+13 674 567 75 54">+13 674 567 75 54</a>
+            </h4>
           </div>
           <div class="location c-container">
             <h3 class="contact-location c-title">
               We are waiting for your visit
             </h3>
             <h4 class="contact-city conact-fiel">
-                <a href="https://www.google.com/maps/place/%D0%92%D0%B0%D1%80%D1%88%D0%B0%D0%B2%D0%B0/@52.1811685,21.3651849,1647m/data=!3m1!1e3!4m5!3m4!1s0x471ecc669a869f01:0x72f0be2a88ead3fc!8m2!3d52.2294817!4d21.0127258">
-                    1 Central Street, Boston (entrance from the store)
-            </a>
-                </h4>
+              <a
+                href="https://www.google.com/maps/place/%D0%92%D0%B0%D1%80%D1%88%D0%B0%D0%B2%D0%B0/@52.1811685,21.3651849,1647m/data=!3m1!1e3!4m5!3m4!1s0x471ecc669a869f01:0x72f0be2a88ead3fc!8m2!3d52.2294817!4d21.0127258"
+                target="_blank"
+              >
+                1 Central Street, Boston (entrance from the store)
+              </a>
+            </h4>
             <h4 class="contact-address conact-fiel">
-                <a href="https://www.google.com/maps/place/%D0%92%D0%B0%D1%80%D1%88%D0%B0%D0%B2%D0%B0/@52.1811685,21.3651849,1647m/data=!3m1!1e3!4m5!3m4!1s0x471ecc669a869f01:0x72f0be2a88ead3fc!8m2!3d52.2294817!4d21.0127258">
-                    18 South Park, London</a>
-                </h4>
+              <a
+                href="https://www.google.com/maps/place/%D0%92%D0%B0%D1%80%D1%88%D0%B0%D0%B2%D0%B0/@52.1811685,21.3651849,1647m/data=!3m1!1e3!4m5!3m4!1s0x471ecc669a869f01:0x72f0be2a88ead3fc!8m2!3d52.2294817!4d21.0127258"
+                target="_blank"
+              >
+                18 South Park, London</a
+              >
+            </h4>
           </div>
           <div class="help-img"></div>
         </div>

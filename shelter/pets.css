@@ -64,6 +64,9 @@
   position: relative;
   z-index: 300;
 }
+.logo:hover {
+  cursor: pointer;
+}
 
 .menu-items, .menu-item-activ {
   color: #545454;

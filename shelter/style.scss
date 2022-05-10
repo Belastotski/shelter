@@ -32,71 +32,198 @@ a:hover {
 .cards:hover .card-btn{
     background: #FDDCC4;
 }
-.wrapper {
-    width: 1280px;
-    margin: auto;
-}
+$width-max: 1280px;
+$width-mid: 768px;
+$width-min: 320px;
 .head_background {
     display:flex;
     flex-direction: column;
-    height: 908px;
+    height: 100%;
     width: 100%;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),#211F20;
 }
 
-$def-width: 1200px;
 
-@media (min-width: 768px) {
+@mixin def-width-container {
+    width: 1200px;
+    @media (max-width: ($width-max - 1)) {
+        width: $width-mid; 
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: $width-min; 
+    }  
+}
+
+@mixin def-width {
+    width: $width-max;
+    @media (max-width: ($width-max - 1)) {
+        width: $width-mid; 
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: $width-min; 
+    }  
+}
+
+.gray {
+    display: none;
+    @media (max-width: ($width-mid - 1)){
+        display: inline-block;
+    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(128, 128, 128, 0.7);
+    z-index: 1;
+}
+
+.wrapper {
     
+    @include def-width;
+    margin: auto;
+    overflow: hidden;
+    // overflow-y:hidden;
 }
 
 .header {
+    position: relative;
     margin: 45px 40px 0 40px;
+    @media (max-width: ($width-max - 1)) {
+        margin: 30px 30px 0 30px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        // margin: 30px 53px 0 10px;
+        margin: 30px 0 0 0;
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: #FFFFFF;
+    .header-title {
+        /* logo_title */
+        
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 110%;
+        /* or 35px */
+        
+        
+        letter-spacing: 0.06em;
+        
+        /* color-primary */
+        
+        color: #F1CDB3;
+        }
+        .header-subtitle {
+        font-family: 'Arial';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 35px;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.1em;
+        
+        }
 }
 .logo {
+    z-index: 200;
     display: flex;
     flex-direction: column;
 align-items: center;
 margin-bottom:10px;
 margin-top: 10px;
-}
 .logo:hover {
     cursor: pointer;
 }
-.header-title {
-/* logo_title */
-
-font-family: 'Georgia';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 110%;
-/* or 35px */
-
-
-letter-spacing: 0.06em;
-
-/* color-primary */
-
-color: #F1CDB3;
+@media (max-width: ($width-mid - 1)){
+    margin: 0 0 0 10px;
 }
-.header-subtitle {
-font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-line-height: 35px;
-display: flex;
-align-items: center;
-letter-spacing: 0.1em;
-
 }
+.display-block { 
+    display: block;
+}
+
+.burger {
+    display: none;
+    content: '';
+    width: 30px;
+    height: 22px;
+    background-image: url('./assets/icon/Burger.png');
+    transition: transform .8s;
+    &:hover {
+        cursor: pointer;
+        // transform: rotate(90deg);
+    }
+    &.active {
+        transform: rotate(90deg);
+        
+    }
+    @media (max-width: ($width-mid - 1)) {
+        display: inline-block;
+        margin-right: 53px;
+        z-index: 200;
+    }
+}
+
+.hide{
+    display: none !important;
+}
+.show {
+    display: inline-block;
+}
+.show-burger-menu {
+    animation: burger .3s;
+    @keyframes burger {
+        0% { right: -320px;}
+        100% { right: 0px; }
+    }
+}
+.hide-burger-menu {
+    animation: bur .3s;
+    @keyframes bur {
+        0% { right: 0px;}
+        100% { right: -320px;
+                display: none;}
+    }
+}
+
+.menu {
+    display: inline-block;
+    @media (max-width: ($width-mid - 1)) {
+        display: none;
+    }
+}
+
+.menu-burger {
+    z-index: 100;
+    display: none ;
+    width: 320px;
+    @media (max-width: ($width-mid - 1)) {
+        display: inline-block;
+        position: absolute;
+        top: -50px;
+        right: 0px;
+        height: 823px;
+        background-color: #292929;
+        
+    }
+}
+
 .menu-items {
+    @media (max-width: ($width-mid - 1)) {
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -109,6 +236,10 @@ letter-spacing: 0.1em;
 
 }
 .menu-item {
+    @media (max-width: ($width-mid - 1)) {
+        margin: 20px 0;
+        font-size: 32px;
+    }
 margin: 0 0 0 36px;
 
 }
@@ -118,10 +249,23 @@ margin: 0 0 0 36px;
 }
 .main-container {
     margin: 44px 40px 0 40px;
+    @media (max-width: ($width-max - 1)) {
+        margin: 60px 100px 0 90px;
+        height: 1015px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 673px;
+        margin: 30px 10px 0 10px;
+    }
 }
 .main{
     display: flex;
     flex-direction: row;
+    @media (max-width: ($width-max - 1)){
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+    }
 }
 .main-content {
     width: 460px;
@@ -129,27 +273,50 @@ margin: 0 0 0 36px;
     flex-direction: column;
     align-items: flex-start;
     margin-top: 160px;
-
+    @media (max-width: ($width-max - 1)){
+    margin-top: 0;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        align-items: center;
+        width: 100%;
+    }
 }
 
-h2 {  
-    /* h2 */  
+h2 {   
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
     font-size: 44px;
     line-height: 130%;
-    /* or 57px */
+@media (max-width: ($width-mid - 1)){
+    font-size: 25px;
+}
+
 
 }
 
 .main-header {
     width: 310px;
     color: #FFFFFF;
+    @media (max-width: ($width-mid - 1)){
+        width: 200px;
+        text-align: center;
+    }
 }
+
+.main-btn {
+    @media (max-width: ($width-max - 1)){
+        align-self: center;
+    }
+
+}
+
 .main-text {
     margin: 42px 0;
 color: #CDCDCD;
+@media (max-width: ($width-mid - 1)){
+    text-align: center;
+}
 }
 
 .subheading{
@@ -160,6 +327,19 @@ color: #CDCDCD;
     line-height: 160%;
 }
 .main-img {
+    @media (max-width: ($width-max - 1)){
+        margin: 99px 0 0 120px;
+        width: 569px;
+        height: 593px;
+        background-position: top top;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: 260px;
+        height: 272px;
+        margin: 105px 0 0 60px;
+    }
     margin-left: 42px;
     width: 698px;
 height: 728px;
@@ -170,16 +350,43 @@ height: 728px;
 
 .about {
     height: 588px;
+    @media (max-width: ($width-max - 1)) {
+        height: 1048px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 974px;
+        margin: 0;
+    }
 }
 .about-container {
-    width:  $def-width;
+    @include def-width-container;
     height: 408px;
+    @media (max-width: ($width-max - 1)) {
+        height: 868px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 890px;    
+        // margin: 0;    
+    }
     display: flex;
     flex-direction: row;
     justify-content: center;
 
+
 }
 .about-img {
+    @media (max-width: ($width-max - 1)) {
+    margin: 80px 0 0 0;
+    order: 1;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: 260px;
+        height: 353px;
+        margin: 42px 0 0 0;
+    }
     margin-left: 175px;
     margin-top: 10px;
 width: 300px;
@@ -188,6 +395,15 @@ content: '';
 background: url(./assets/img/pets.png);
 }
 .about-content {
+    @media (max-width: ($width-max - 1)) {
+        margin: 0;
+        order: 0;
+        }
+    @media (max-width: ($width-mid - 1)) {
+        // margin: 0;
+        width: 270px;
+        height: 494px;
+    }
     margin: 22px 175px 0 120px;
     width: 430px;
 height: 380px;
@@ -204,53 +420,93 @@ h3 {
     font-size: 35px;
     line-height: 130%;
     letter-spacing: 0.06em;  
+    @media (max-width: ($width-mid - 1)) {
+        //styleName: h3-mobile;
+font-size: 25px;
+line-height: 32px;
+text-align: center;
+
+    }
 }
 
 .about-header {
     color: #545454;
     width: 390px;
+    @media (max-width: ($width-mid - 1)){
+         width: 270px;
+    }
 
 }
 .about-center{
 
     margin-top: 20px;
+    @media (max-width: ($width-mid - 1)){
+        text-align: justify;
+    }
+    @media (max-width: ($width-mid - 1)){
+        // margin: 25px 0 ;
+        // width: 270px;
+    }
 }
 
 .pets {
     height: 877px;
     width: 100%;
     background: #F6F6F6;
+    @media (max-width: ($width-mid - 1)){
+        height: 791px;
+    }
 }
 .pets-container {
  /* background: red;    */
-    width: $def-width;
+    @include def-width-container;
     height: 697px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-between;
     margin-top: -10px;
-
+    @media (max-width: ($width-mid - 1)){
+        height: 707px;
+    }
 }
 .pets-head {
+    @media (max-width: ($width-mid - 1)){
+        width: 320px;
+    }
     width: 400px;
     text-align: center;
     color: #545454;
 }
 .pets-slider {
-width: $def-width;
-height: 435px;
-position: relative;
-}
+    @include def-width-container;
+    @media (max-width: ($width-max - 1)){
+     width: 706px;   
+    }
+    @media (max-width: ($width-mid - 1)){
+        width: 290px;   
+       }
+    height: 435px;
+    position: relative;
+    }
 .pets-slider-container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    @media (max-width: ($width-max - 1)){
+        flex-wrap: wrap;
+        overflow:hidden;
+        // max-height:50px;
+        overflow-y:hidden;
+    }
 
 }
 .cards {
+    @media (max-width: ($width-max - 1)){
+        margin: 0 20px;   
+    }
     margin: 0 45px;
     width: 270px;
     height: 435px;
@@ -312,14 +568,23 @@ height: 52px;
     justify-content: center;
     position: absolute;
     top: 189px;
+    @media (max-width: ($width-mid - 1)){ 
+        top: 430px;
+    }
 }
 .nav-btn-left{
+    @media (max-width: ($width-mid - 1)){
+        left: 55px;
+    }
     transform: rotate(-180deg);
     
 
 }
 .nav-btn-right{
-    right: 0px;
+    right: 0;
+    @media (max-width: ($width-mid - 1)){
+    right: 55px;
+    }
 
 }
 .pets-btn {
@@ -328,11 +593,25 @@ height: 52px;
 }
 
 .help {
- width: 1280px;
+ @include def-width;
+ @media (max-width: ($width-max - 1)) {
+    height: 779px;
+}
+@media (max-width: ($width-mid - 1)) {
+    height: 661px;
+    padding: 42px 0;
+}
  height: 611px;   
 }
 .help-container {
-    width: $def-width;
+    max-width: 1200;
+    @media (max-width: ($width-max - 1)) {
+        width: 630px;
+        height: 599px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+    height: 100%;
+    }
 height: 431px;
 display: flex;
 flex-direction: column;
@@ -342,10 +621,20 @@ justify-content: space-between;
 .help-title {
     width: 310px;
     text-align: center;
+    @media (max-width: ($width-mid - 1)) {
+        width: 270px;
+        }
 }
 
 .help-icons {
-    width: $def-width;
+    @include def-width-container;
+    @media (max-width: ($width-max - 1)) {
+        height: 446px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+    height: 555px;
+    justify-content: flex-start;
+    }
 height: 281px;
 display: flex;
 flex-direction: row;
@@ -354,6 +643,15 @@ flex-wrap: wrap;
 }
 
 .help-card {
+    @media (max-width: ($width-max - 1)) {
+        flex: 0 0 30%;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        flex: 0 0 50%;
+        height: 87px;
+        width: 130px;
+        margin-bottom: 30px;
+    }
     flex: 0 0 20%;
     height:113px;
     min-width: 60px;
@@ -416,11 +714,29 @@ color: #545454;
     background-image: url(./assets/icon/sleeping.png);
 }
 .donate {
+    @media (max-width: ($width-max - 1)){
+        height: 783px;
+    }
+    @media (max-width: ($width-mid - 1)){
+        height: 542px;
+    }
     height: 462px;
 width: 100%;
 background: #F6F6F6;
 }
 .donate-container {
+    @media (max-width: ($width-max - 1)){
+        width: 100%;
+        height: 100%;
+        flex-direction:column;
+    }
+    @media (max-width: ($width-mid - 1)){
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
     width: 915px;
     height: 282px;
     display: flex;
@@ -428,7 +744,20 @@ background: #F6F6F6;
     justify-content: space-between;
     align-items: center;
 }
+
 .donate-img {
+    @media (max-width: ($width-max - 1)) {
+        width: 505px;
+        height: 261px;
+        order: 1;
+        margin: 0 0 100px 0;
+    }
+    @media (max-width: ($width-mid - 1)){
+        width: 260px;
+        height: 135px;
+        margin: 0;
+        background-size: contain;
+    }
     margin-top: 10px;;
     width: 55%;
     content: '';
@@ -438,6 +767,16 @@ background: #F6F6F6;
     height: 100%;
 }
 .donate-content {
+    @media (max-width: ($width-max - 1)) {
+    margin-top: 80px;
+    width: 380px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 281px;
+        width: 300px;
+        margin: 0;
+        align-items: center;
+        }
     margin-top: 20px;
     width: 41%;
     height: 282px;
@@ -448,14 +787,22 @@ background: #F6F6F6;
 .donate-title {
     color: #545454;
     width: 300px;
+    @media (max-width: ($width-mid - 1)) {
+    width: 220px;
+    }
 }
 
 .donate-subheading {
     color: #545454; 
+    @media (max-width: ($width-mid - 1)) {
+    font-size: 13px;
+    }
 }
 
 .card {
-
+    @media (max-width: ($width-mid - 1)) {
+        width: 280px;
+    }
     width: 349px;
     height: 43px; 
     background: #F1CDB3;
@@ -472,6 +819,10 @@ background: #F6F6F6;
 }
 
 .donate-info {
+    @media (max-width: ($width-mid - 1)) {
+        width: 280px;
+        text-align: justify;
+    }
     font-family: 'Arial';
 font-style: italic;
 font-weight: 400;
@@ -512,6 +863,9 @@ h4 {
 font-style: normal;
 font-weight: 400;
 font-size: 20px;
+@media (max-width: ($width-mid - 1)) {
+    font-size: 15px;
+}
 line-height: 115%;
 /* identical to box height, or 23px */
 
@@ -525,6 +879,12 @@ letter-spacing: 0.06em;
 }
 
 .footer {
+    @media (max-width: ($width-max - 1)) {
+        height: 639px;
+    }
+    @media (max-width: ($width-mid - 1)) { 
+    height: 809px;
+    }
     height: 350px;
     width: 100%;
     background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #211F20;
@@ -534,8 +894,13 @@ letter-spacing: 0.06em;
     justify-content:flex-end;
 }
 .footer-container {
+    @media (max-width: ($width-max - 1)) {
+        height: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
     height: 310px;
-    width: $def-width;
+    @include def-width-container;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -548,12 +913,26 @@ letter-spacing: 0.06em;
     justify-content:space-between;
 }
 .contact {
+    margin-top: 30px;
     width: 280px;
+    @media (max-width: ($width-mid - 1)) {
+        width: 250px;
+    }
+
 }
 .c-title {
     color: #FFFFFF;
+    @media (max-width: ($width-mid - 1)) {
+        width: 250px;
+    }
 }
 .c-container {
+    @media (max-width: ($width-max - 1)) {
+    margin: 30px 30px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        margin: 20px 10px;
+    }
     margin-top: 16px;
     display: flex;
     flex-direction:column;
@@ -585,7 +964,16 @@ color: #F1CDB3;
 }
 .location {
     width: 305px;
+    @media (max-width: ($width-mid - 1)) {
+        width: 300px;
+    }
 }
+.contact-location {
+    @media (max-width: ($width-mid - 1)) {
+        align-self: center;
+    }
+}
+
 
 .contact-city {
     background-image: url('./assets/icon/pin.png');
@@ -599,10 +987,21 @@ color: #F1CDB3;
     line-height: 180%;
 }
 .help-img {
+    @media (max-width: ($width-mid - 1)) {
+        width: 260px;
+        height: 269px;
+        background-size: contain;
+    }
     width: 300px;
 height: 310px;
 background-image: url('assets/img/footer-puppy.png');
 content: '';
+@media (max-width: ($width-max - 1)) {
+    margin-top: 30px;
+}
+@media (max-width: ($width-mid - 1)) {
+    margin-top: 40px;
+}
 }
 
 

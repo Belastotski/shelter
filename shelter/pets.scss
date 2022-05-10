@@ -1,0 +1,167 @@
+$width-max: 1280px;
+$width-mid: 768px;
+$width-min: 320px;
+
+
+.head-container {
+    z-index: 200px;
+    position: fixed;
+    top: 0;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: $width-max;
+    height: 120px;
+    @media (max-width: ($width-max - 1)) {
+        width: $width-mid;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: $width-min;
+        overflow-x: clip;
+    }
+}
+.burger-gray {
+    -webkit-filter: grayscale(100%);
+}
+
+.gray-z0 {
+    z-index: 0;
+}
+
+.header-pets{
+    @media (max-width: ($width-max - 1)) {
+        width: 708px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: $width-min;
+        margin: 30px 0 0 10px;
+    }
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px;
+    /* height: 100%; */
+    color: #545454 !important;
+    .menu-burger .menu-item {
+        color: #CDCDCD;
+    }
+}
+.logo .header-title{
+    color: #545454;
+    margin-top: 10px;
+}
+ .logo {
+    position: relative;
+    z-index: 300;
+}
+
+
+.menu-items, .menu-item-activ {
+    color: #545454;
+}
+
+
+.our-pets {
+    @media (max-width: ($width-max - 1)) {
+        width: $width-mid;
+        height: 1733px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 1649px;
+        width: 320px;
+    }
+    margin-top: 120px;
+    width: $width-max;
+    height: 1462px;
+    color: #545454;
+    background: #F6F6F6;
+
+}
+.our-pets-container {
+    @media (max-width: ($width-max - 1)) {
+        width: 708px;
+        height: 1733px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        height: 1565px;
+        width: 300px;
+    }
+    width: 1200px;
+    /* height: 100%; */
+}
+.our-pets-content {
+    @media (max-width: ($width-max - 1)) {
+        height: 1603px;  
+        justify-content:flex-start;  
+        margin-top: 80px;
+    }
+    @media (max-width: ($width-mid - 1)) {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+    width: 100%;
+    height: 1163px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:center;
+
+}
+.our-pets-title {
+    width: 400px;
+    text-align: center;
+    @media (max-width: ($width-mid - 1)) {
+        width: 300px;
+    }
+
+}
+
+
+.our-pets-cards {
+    @media (max-width: ($width-max - 1)) {
+        height: 1365px;
+        overflow-y:hidden;
+        flex: 0 0 87%;
+        margin: 30px 0 40px 0;
+    }
+    width: 100%;
+    height: 930px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 20%
+}
+.our-pets-cards .cards{
+    margin: 15px auto;
+}
+
+/* .our-pets-cards .cards-container {
+margin-bottom: 30px;
+} */
+
+
+.our-pets-btn {
+    height: 52px;
+width: 52px;
+margin: 0 10px;
+@media (max-width: ($width-mid - 1)) {
+    margin: 0 2px;
+}
+}
+.disable-btn{
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+}
+.disable-btn:hover {
+    background:inherit;
+    cursor:default;
+}
+
+.active-btn {
+    background: #F1CDB3;
+}

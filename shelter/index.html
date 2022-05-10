@@ -6,19 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./normalize.css" />
     <title>Cozy House</title>
   </head>
   <body>
+    <div class="gray hide"></div>
     <div class="wrapper">
       <div class="head_background">
         <header class="header">
           <div class="logo">
             <h1 class="header-title">Cozy House</h1>
             <div class="header-subtitle">Shelter for pets in Boston</div>
+          </div>
+          <div class="burger">
+          </div>
+          <div class="menu-burger hide">
+            <ul class="menu-items">
+              <li class="menu-item menu-item-activ">
+                <a href="#">About the shelter</a>
+              </li>
+              <li class="menu-item"><a href="./pets.html">Our pets</a></li>
+              <li class="menu-item"><a href="#help">Help the shelter</a></li>
+              <li class="menu-item"><a href="#footer">Contacts</a></li>
+            </ul>
           </div>
           <div class="menu">
             <ul class="menu-items">
@@ -40,14 +52,14 @@
                 extremely wide and open heart. He or she will love you more than
                 anybody else in the world, you will see!
               </p>
-              <button class="btn" onclick="location.href='#pets';">Make a frends</button>
+              <button class="btn main-btn" onclick="location.href='#pets';">Make a frends</button>
             </div>
             <div class="main-img"></div>
           </main>
         </div>
       </div>
       <div class="about container">
-        <div class="about-container mb20">
+        <div class="about-container">
           <div class="about-img"></div>
           <div class="about-content subheading">
             <h3 class="about-header">About the shelter “Cozy House”</h3>
@@ -152,7 +164,7 @@
         </div>
       </div>
       <div class="donate container">
-        <div class="donate-container mb20">
+        <div class="donate-container">
           <div class="donate-img"></div>
           <div class="donate-content">
             <h3 class="donate-title heading">You can also make a donation</h3>
@@ -200,5 +212,6 @@
         </div>
       </footer>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>

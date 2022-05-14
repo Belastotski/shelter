@@ -198,4 +198,9 @@ margin-bottom: 30px;
 
 .active-btn {
   background: #F1CDB3;
-}/*# sourceMappingURL=pets.css.map */
+}
+#activ-btn:hover {
+    cursor: default;
+    background: #F1CDB3;
+}
+/*# sourceMappingURL=pets.css.map */
